@@ -16,11 +16,28 @@ public class AppointmentController {
     private final AppointmentRepository repository;
     private final EmailService emailService;
 
+    /**
+     * Construtor do controller
+     *
+     * @param repository
+     *   repositório utilizado para persistir o Appointment no banco de dados
+     * @param emailService
+     *   classe de serviço para envio de e-mails
+     */
     public AppointmentController(AppointmentRepository repository, EmailService emailService) {
         this.repository = repository;
         this.emailService = emailService;
     }
 
+    /**
+     * Cria um compromisso a partir do método HTTP POST
+     *
+     * @param appointment
+     *   {code Appointment} que será usado para envio do e-mail.
+     *
+     * @return
+     *   Uma String para confirmação do sucesso da operação.
+     */
     @PostMapping
     public String createAppointment(@RequestBody Appointment appointment) {
         appointment.setId(null);

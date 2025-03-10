@@ -12,10 +12,19 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * Nome do sujeito
+     */
     private String name;
 
+    /**
+     * Data e hora do compromisso
+     */
     private String dateTime;
 
+    /**
+     * E-mail do sujeito
+     */
     private String email;
 
     public Long getId() {
